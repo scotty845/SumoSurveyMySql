@@ -1,0 +1,432 @@
+
+body {
+  background-color: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+    padding-top: 50px;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #333;
+}
+
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #3bc492;
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #c0392b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+
+.imgSword { 
+width: 107px; 
+height: 145px; 
+background: url("../assets/img/samuraisword1.png") no-repeat; 
+}
+
+.imgSword:hover { 
+background: url(your image 2) no-repeat; 
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Wrap Sections
+   ========================================================================== */
+
+#headerwrap {
+	background-color: #34495e;
+	padding-top: 60px;
+}
+
+#headerwrap h1 {
+	margin-top: 30px;
+	color: white;
+	font-size: 70px;
+	
+}
+
+#headerwrap h3 {
+	color: white;
+	font-size: 30px;
+}
+
+#headerwrap h5 {
+	color: white;
+	font-weight: 700;
+	text-align: left;
+}
+
+#headerwrap p {
+	text-align: left;
+	color: white
+}
+
+/* intro Wrap */
+
+#intro {
+	padding-top: 50px;
+	border-top: #bdc3c7 solid 5px;
+}
+
+#features {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#features .ac a{
+	font-size: 20px;
+}
+
+/* Showcase Wrap */
+
+#showcase {
+	display: block;
+	background-color: #34495e;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#showcase h1 {
+	color: white;
+}
+
+#footerwrap {
+	background-color: #2f2f2f;
+	color: white;
+	padding-top: 40px;
+	padding-bottom: 60px;
+	text-align: left;
+}
+
+#footerwrap h3 {
+	font-size: 28px;
+	color: white;
+}
+
+#footerwrap p {
+	color: white;
+	font-size: 18px;
+}
+
+/* Copyright Wrap */
+
+#c {
+	background: #222222;
+	padding-top: 15px;
+	text-align: right;
+}
+
+#c p {
+	color: white
+}
+
+
+/* In Line Edit CSS Functionality  */
+
+.editable-item-name {
+  cursor: pointer;
+  float: left;
+  width: 100%;
+}
+
+.editable-item-name a {
+  font-size: 14px;
+}
+
+.inline-edit-input {
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+
+select.inline-edit-selectbox {
+  height: 25px;
+  margin-bottom: 8px;
+  padding: 2px;
+}
+
+.inline-edit-mode {
+  float: left;
+  padding-right: 20px;
+}
+
+.inner-card-header {
+  background-color: #E2E2E2;
+  padding: 15px 10px;
+  float: left;
+  width: 100%;
+}
+
+.inner-card-header .inline-edit-link {
+  margin-top: 3px;
+  margin-left: -3px;
+}
+
+.inline-edit-link {
+  display: none;
+}
+
+.editable-item-name:hover .inline-edit-link {
+  display: block;
+}
+
+.editable-item-name:hover .inline-edit-link {
+    display: block;
+}
+
+
+
+#movers-row {
+	margin: 0px 0 0 0px;
+}
+#movers-row div {
+	width: 15.3%;
+	float: left;
+}
+#movers-row div img {
+	float: right;
+}
+
+
+/* In Line Edit CSS Functionality  */
+
+
+/* From Style CSS  */
+
+.option{
+    background-color:#cadaee;
+    font-size:20px;
+    padding:10px;
+    margin:3px;
+}
+
+/* From Style CSS  */
+
+
+.option label{
+    font-weight:normal;
+}
+
+.option {
+        font-size: 16px;
+        padding: 6px;
+    }
+/* From Style CSS  */
+
+
+
+/* From stylemakesurvey CSS  */
+
+
+
+.table-condensed
+{
+
+}
+
+
+
+.makesurvey-spacer { 
+margin:0; padding:0; height:50px;
+ }
+ 
+.makesurvey-questions{
+    font-family: "verdana", Times, serif;	
+	font-size: 2.5 em;
+    background-color:;
+    color:white;
+    min-height:300px;
+    text-align:left;
+	
+}
+
+.makesurvey-questions-noadmin{
+    font-family: "verdana", Times, serif;	
+	font-size: 2.5 em;
+    background-color:;
+    color:white;
+    min-height:;
+    text-align:left;
+	
+}
+
+
+
+
+
+.makesurvey-questions-addquestionlabel{
+    font-family: "Times New Roman", Times, serif;	
+	font-size: 2.5 em;
+    background-color:;
+    color:white;
+}
+
+
+.makesurvey-answers{
+    font-family: "Times New Roman", Times, serif;
+    background-color:;
+    color:white;
+    min-height:;
+    text-align:left;
+	
+}
+
+.makesurvey-answers-noadmin{
+    font-family: "Times New Roman", Times, serif;
+    color:white;
+    text-align:left;
+}
+
+
+
+.makesurvey-questions-addanswerslabel{
+    font-family: "Times New Roman", Times, serif;	
+	font-size: .3 em;
+    background-color:;
+    color:white;
+	text-align:left;
+	text-decoration: none !important;
+}
+
+.makesurvey-questions-addanswerstextbox{
+    font-family: "Times New Roman", Times, serif;	
+	font-size: .3 em;
+    background-color:;
+    color:black;
+	width:100%;
+	outline: none;
+	  background-color:;
+    border: 1px solid;
+    height:;
+    width:;
+}
+
+.makesurvey-surveyresultslabel{
+     color:white;
+	 border-color:white;
+	 margin-top:0;
+	 margin-bottom:0;
+	
+}
+
+
+
+.makesurvey-answers-highlight{
+  box-shadow: 6px 6px 15px #666;
+  border-color:#d3d3d3 ;
+  
+  background: ;
+  color: #fff;
+  cursor: pointer;
+  border-width:15px;
+  /*Opacity*/
+  zoom: 1;
+  filter: alpha(opacity=100);
+  opacity: 1;
+  width:80%;
+}
+
+
+.fa-pencil{
+   color:yellow;
+}
+
+/* From styletakesurvey CSS  */
+.takesurvey-answerresults {
+    font-family: verdana; 
+    font-size: .8em;
+	font-weight: bold; 
+    font-style: italic; 
+	background: light blue;
+    color: white; 
+    line-height: 18px;
+	
+}
+
+.takesurvey-answers {
+   font-family: "Times New Roman", Times, serif;	
+   font-size: 1.2 em;
+   font-weight: bold; 
+   margin-left: -3px;
+   margin-right:  5px; 
+   
+    }
+	
+
+.takesurvey-spacer { 
+margin:0; padding:0; height:80px;
+ }
+
+/* From styletakesurvey CSS  */
+
+
+
+
+
+
+/* From stylemakesurvey CSS  */
+
+
+[ng-cloak]
+{
+  display: none !important;
+}
+
+
+

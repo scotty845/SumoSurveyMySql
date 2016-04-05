@@ -1,0 +1,31 @@
+{
+  "name": "sumosurvey",
+  "version": "1.0.0",
+  "description": "Sumo Survey With Node Express  MySQL Sequelize Angular",
+  "main": "SumoSurveyServer.js",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cookie-parser": "^1.4.1",
+    "debug": "^2.2.0",
+    "express-validator": "^2.19.1",
+    "express": "^4.13.3",
+    "express-session": "^1.13.0",
+    "mysql": "^2.10.2",
+    "q": "^1.4.1",
+    "sequelize": "^3.20.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node sumosurveyserver"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "MySql",
+    "Sequelize",
+    "Angular"
+  ],
+  "author": "Scott Londer",
+  "license": "ISC"
+}

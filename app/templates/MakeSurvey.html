@@ -1,0 +1,490 @@
+
+    
+
+    <!-- Fixed navbar -->
+	    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#/SumoSurvey" my-refresh><b>Sumo Survey</b></a>
+	        </div>
+	        <div class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#/SumoSurvey"  my-refresh>Home</a></li>
+	            <li><a href="#/TakeSurvey" my-refresh>Take Survey</a></li>
+	            <li><a href="#/MakeSurvey" my-refresh>Make Survey</a></li>
+	            <li><a href="#SumoSurvey/#contact" class="smothScroll">Contact</a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </div>
+
+
+	<section id="home" name="home"></section>
+	<div id="headerwrap">
+	    <div class="container">
+	    	<div class="row centered">
+	    		<div class="col-lg-12">
+					<h1> <b>Sumo Survey</b></h1>
+					<h3>Make and Take Surveys</h3>
+					<br>
+	    		</div>
+	    		
+	    		<div class="col-lg-2">
+				
+					<img class="hidden-xs hidden-sm hidden-md" src="assets/img/arrow1.png">
+					
+	    		</div>
+	    		<div class="col-lg-8">
+				<!--big centered picture -->
+				 <div class="center">
+					  
+				  </div>
+				  <div class="center"> 
+						
+                   </div>
+				<!--big centered picture -->
+				
+				
+				
+		
+				<!-- INLINE EDIT SECTION -->
+
+  <script type="text/ng-template" id="inlineEditTemplate">
+    <section>
+    <div ng-show="editMode" style="display: inline;">
+        <form role="form" name="inlineForm">
+            <div ng-show="!inputType.settingValuesSelectbox">
+
+                <div ng-class="{ 'has-error' : inlineForm.model.$invalid && !inlineForm.model.$pristine }">
+                    <span ng-if="model == 'true' || model == 'false'">
+                        <select ng-options="option as option for option in ['true', 'false']" ng-model="$parent.model" class="form-control input-sm inline-edit-selectbox"></select>
+                        <button type="button" class="btn btn-default btn-xs" ng-click="cancel()">cancel</button>
+                        <button class="btn btn-info btn-xs" ng-click="save($parent.model)" ng-disabled="inlineForm.$invalid">save</button>
+                    </span>
+                    <span ng-if="model != 'true' && model != 'false'">
+					
+                        <input class="form-control inline-edit-input input-xs" type="text" on-enter="" on-esc="cancel()" ng-model="$parent.model" required name="model">
+                        <button type="button" class="btn btn-default btn-xs" ng-click="cancel()">cancel</button>
+                        <button class="btn btn-info btn-xs" ng-click="save($parent.model)" ng-disabled="inlineForm.$invalid">
+                            <span ng-hide="savingInProgress">save</span>
+                        </button>
+						
+						
+                    </span>
+                </div>
+
+            </div>
+            
+			
+            <span ng-show="inputType.settingValuesSelectbox">
+			
+                <select class="form-control input-sm inline-edit-selectbox" on-enter="" on-esc="cancel()" ng-model="model" ng-change="selectChanged(model)" ng-options="option as option for option in inputType.settingValuesSelectbox"></select>
+                <button type="button" class="btn btn-default btn-xs" ng-click="cancel()">cancel</button>
+                <button class="btn btn-info btn-xs" ng-click="save(model)" ng-disabled="inlineForm.$invalid">save</button>
+            </span>
+			
+			
+			
+        </form>
+    </div>
+    <div class="editable-item-name">
+        
+		
+		
+	<div class="inline-edit-mode" ng-hide="editMode" ng-click="edit()">{{model}}</div>
+	<div >
+	<!-- editAnswer  editDelete-->
+	<div class="container" id="movers-row">
+	<table>
+	<tr>
+	<td>
+	<a class="col-xs-6 inline-edit-link" ng-click="edit()" ng-hide="editMode">
+    <i class="fa fa-edit">Edit</i>
+    </a>
+	</td>
+	<td>
+	<a class="col-xs-6 inline-edit-link" ng-click="deleteItem()" ng-hide="editMode">
+    <i class="fa fa-edit">delete</i>
+	</td>
+	</tr>
+	</table>
+	<!-- editAnswer editDelete -->
+	
+	
+	
+	
+	</div>
+	
+	</div>
+		
+	
+		</div>
+	</div>
+	
+	
+	
+</section>
+  </script>
+
+  
+  <!--INLINE EDIT SECTION -->
+				
+ <div  ng-if="adminRights==false"> <!-- start login section-->
+
+	<!-- show hide login-->
+	<div class="col-lg-3">
+		<label class="makesurvey-questions-addquestionlabel" id="callLogin" ng-click="myLoginShow()">Login</label>
+	</div>
+	<!-- show hide login-->
+	
+<!-- Login Form For Admin Rights --> 	
+<div  class="col-lg-6" ng-show="showLogin" >
+
+	<!--show hide div --> 
+    <form name="form" ng-submit="Login()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label class="makesurvey-answers-noadmin" for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control" ng-model="formValid.username" required />
+            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+        </div>
+		<div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label class="makesurvey-answers-noadmin" for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="formValid.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        </div>
+		
+		<div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || formValid.dataLoading" class="btn btn-primary">Login</button>
+		<img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+		
+		
+		</div>
+		
+		
+		
+		</form>
+ </div>	<!--show hide div -->
+
+	<!-- Login Form For Admin Rights -->		
+			
+			
+				
+		<div>
+		</div>
+</div><!-- end login section -->	
+				 
+
+ <div class="col-sm-12 tb-pb-40" >
+ 
+
+ 
+	<div ng-if="adminRights" class="container-fluid">
+		
+        <div class="row">
+		<table>
+		<td>
+		<label class="makesurvey-questions-addquestionlabel" >
+		Welcome Back {{sessionData.knownuserUserName}}
+		</label>
+		</td>
+		<td><button ng-click="logoutUser()"class="btn btn-link" type="submit">Logout</button>
+		</td>
+		</table>
+		</div>
+		</div>
+					
+<!--original login form section -->
+		
+		<div class="makesurvey-spacer">
+		</div>
+
+		
+<div ng-if="adminRights">
+<!--show hide entire admin section until loggin complete-->
+
+		
+		<!-- survey add questions form-->
+		<div class="container-fluid">		
+
+
+		
+        <div  class="help-block">
+		<div class="col-lg-3">
+		<label class="makesurvey-questions-addquestionlabel" id="callFunction" ng-click="myAddQuestionShow()">Add  Question</label>
+		</div>
+		</div>
+		</div>
+		
+		<div   ng-show="showAddQuestionContent">		
+		<div class="container-fluid">			
+        <div class="row">
+	    <form  data-ng-submit="addQuestion(sessionData.knownuserUserUid)">
+        <div class="col-lg-8">
+            <input class="makesurvey-questions-addanswerstextbox" type="text" data-ng-model="formData.questionText" name="survey-questionText" required blur="submitToggle">
+        </div>
+        <div class="col-lg-1">
+            <button class="btn btn-primary" type="submit">Add</button>
+        </div>
+	    </form>	
+        </div>
+        </div>
+		</div>		
+		<!-- survey add questions form-->		
+				
+				 
+                <table class="table-condensed" ng-repeat="question in questions.questions">
+				
+				 <tr> 		
+				 <td class="fa fa-pencil" 
+				ng-click="showDivAnswer($index,question)" >	
+					
+				 </td>
+				 
+				<td>
+				<div   >
+				<a class="makesurvey-questions"  inline-edit="question.questionText" on-save="updateQuestion(question)" on-cancel="updateQuestion(question.questionText)"  on-delete="deleteQuestion(question)"> </a>
+				</div>
+				
+				
+				
+				 <div ng-class="collapsedClassColor" ng-show="hiddenDiv[question.id]">
+				
+				 
+				   <table  ng-repeat="answer in question.Answers">
+				  
+	                <div class="table-condensed" class="container-fluid">
+					<div  class="col-sm-12 tb-pb-40">
+					<div  class="col-sm-4 makesurvey-surveyresultslabel	" >
+					Total Votes:{{genericServices.myCurrentAnswerVotes(SurveyResults, answer.id,question.id).votes.summedVotes}}
+				    </div>
+					</div>
+					</div>
+					
+						
+						
+					<!--add answer form -->
+							
+				<div class="container-fluid">	
+				    
+				<tr>
+							
+				   <td  class="makesurvey-answers" inline-edit="answer.answerText" on-save="updateAnswer(question,answer)" on-cancel="cancelEdit(answer.answerText)"  on-delete="deleteAnswer(question,answer)" > 
+				   </td>
+				    
+				 </tr>  
+				 
+				 
+				 
+				 <!--SURVEY RESULTS SECTION -->
+	
+			
+				<td>		 
+		 	
+				<div>
+
+				<div  class="container-fluid">
+  
+				<div ng-if="SurveyResults != null" class="col-sm-12 tb-pb-40">
+				<div  class="col-sm-1 makesurvey-surveyresultslabel" > Votes:
+				{{genericServices.myCurrentAnswerVotes(SurveyResults, answer.id,question.id).votes.totalVotesPerAnswer}}
+				
+				</div>
+				<div class="col-sm-1 makesurvey-surveyresultslabel">
+				{{100*
+				(genericServices.myCurrentAnswerVotes(SurveyResults, answer.id,question.id).votes.totalVotesPerAnswer /
+				genericServices.myCurrentAnswerVotes(SurveyResults, answer.id,question.id).votes.summedVotes
+				
+				)|number:0
+				}} %
+				</div>
+    
+	
+				</div>
+	
+
+				</div>
+				</div>
+				</div>
+		  
+				</div>
+				</td>		 
+
+				<!--SURVEY RESULTS SECTION -->
+				 
+		 
+				 
+				 
+				 
+				</div>
+				 
+				 
+				 
+				</table>
+				   
+				   
+		<div  class="container-fluid">				
+        <div class="pull-left">
+		<div class="col-lg-6">
+		<label class="btn btn-link makesurvey-questions-addanswerslabel nounderline " ng-if="question != null" id="callFunctionSCA"
+		ng-click="myFunctionSCA($index,question)">Add Answers</label>
+		</div>
+		</div>
+		</div>			   
+				  
+		<div  ng-show="showContentAnswers[question.id]">		
+		<div class="container-fluid">			
+        <div class="row">
+	    <form>
+		<input type="hidden" data-ng-model="formData.questionId" name="survey-questionId">
+        <div class="col-lg-8">
+            <input class="makesurvey-questions-addanswerstextbox" style="color:black" "type="text" data-ng-model="formData.answerText[question.id]" name="survey-answerText" required>
+        </div>
+        <div class="col-lg-1">
+            <button class="btn btn-primary" type="submit" ng-click="addAnswer(question)">Add</button>
+        </div>
+	    </form>	
+        </div>
+        </div>
+		</div>
+				   
+				   
+				   
+				</div>   
+				
+				
+				
+				
+				 </td>
+				
+				
+				
+				
+				
+                 </tr>
+                    
+                 
+                   
+                </table>
+            </div>
+				
+				
+				
+</div> 
+<!--show hide entire admin section until loggin complete-->			
+			
+
+					<!--
+					<img class="img-responsive" src="assets/img/warrior1.png" alt="">
+					-->
+				
+				<!--big centered picture -->	
+	    		</div>
+	    		<div class="col-lg-2">
+	    			<br>
+					
+					
+					<img  class="hidden-xs hidden-sm hidden-md" src="assets/img/arrow2.png">
+					<!--
+	    			<h5> Design</h5>
+	    			<p> dummy text of</p>
+					-->
+	    		</div>
+	    	</div>
+	    </div> <!--/ .container -->
+	</div><!--/ #headerwrap -->
+
+
+	<section id="desc" name="desc"></section>
+	<!-- INTRO WRAP -->
+	<div id="intro">
+		<div class="container">
+			<div class="row centered">
+				<h1>Find The Answers To Your Questions</h1>
+				<br>
+				<br>
+				
+				<div class="col-lg-4">
+				<a href="#/TakeSurvey#home" my-refresh>		
+				<img id="my-img" src="assets/img/samuraisword1.png" onmouseover="hoverSword(this);" onmouseout="unhoverSword(this);"/>
+				</a>
+					<h3>Take Survey</h3>
+					<p>Select your favourite answer to unique questions</p>
+					
+					
+				</div>
+				<div class="col-lg-4">
+		        <a href="#/MakeSurvey#home" my-refresh>		
+		        <img id="my-img" src="assets/img/samuraisword1.png" onmouseover="hoverSword(this);" onmouseout="unhoverSword(this);"   />
+	             </a>
+					<h3>Make Survey</h3>
+					<p>Make surveys with unique questions and answers </p>
+				</div>
+				<div class="col-lg-4">
+				<a href="#/MakeSurvey#home" my-refresh>
+				<img id="my-img" src="assets/img/samuraisword1.png" onmouseover="hoverSword(this);" onmouseout="unhoverSword(this);"/>
+				</a>
+					<h3>Monitoring</h3>
+					<p>See the results as users take your surveys how many votes 
+					and the most popular answer</p>
+				</div>
+			</div>
+			<br>
+			<hr>
+	    </div> <!--/ .container -->
+	</div><!--/ #introwrap -->
+	
+	<!-- FEATURES WRAP -->
+	
+	
+
+
+	<section id="contact" name="contact"></section>
+	<div id="footerwrap">
+		<div class="container">
+			<div class="col-lg-5">
+				<h3>Address</h3>
+				<p>
+				Av. Sumo 987,<br/>
+				Austin, Texas<br/>
+				73301<br/>
+				United States
+				</p>
+			</div>
+			
+			<div class="col-lg-7">
+				<h3>Drop Us A Line</h3>
+				<br>
+				<form role="form" action="#" method="post" enctype="plain"> 
+				  <div class="form-group">
+				    <label for="name1">Your Name</label>
+				    <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
+				  </div>
+				  <div class="form-group">
+				    <label for="email1">Email address</label>
+				    <input type="email" name="Mail" class="form-control" id="email1" placeholder="Enter email">
+				  </div>
+				  <div class="form-group">
+				  	<label>Your Text</label>
+				  	<textarea class="form-control" name="Message" rows="3"></textarea>
+				  </div>
+				  <br>
+				  <button type="submit" class="btn btn-large btn-success">SUBMIT</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="c">
+		<div class="container">
+			<p>Created by <a href="">Scott Londer</a></p>
+		
+		</div>
+	</div>
+
+
+  
+  

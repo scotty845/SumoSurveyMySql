@@ -1,0 +1,11 @@
+{
+    "db": {
+        "database": "sumo_survey",
+        "username": "root",
+        "password": "mysqlpass"
+			
+    }
+	
+	
+}
+
