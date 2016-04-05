@@ -19,16 +19,16 @@ Technologies:
 Back End Server
 Node.js 
 Express
-Node mysql, Sequelize, Underscore
+Node.js, MySql, Sequelize, Underscore
 
 Front End Display and Test
-Angular
+AngularJS
 Tested On:
 Mozilla Firefox 44.0.2 
 Google Chrome	49.0.2623.87 (Official Build) m (32-bit)
 
 Database
-mysql
+MySql
 
 To Utilize:
 Set Up mysql databse with tables and data:
