@@ -20,9 +20,14 @@ Back End Server
 Node.js 
 Express
 Node.js, MySql, Sequelize, Underscore
+JavaScript
 
 Front End Display and Test
 AngularJS
+HTML
+JavaScipt
+Bootstrap For Responsive Design on Desktop and Mobile Devices See Tests Below
+
 Tested On:
 Mozilla Firefox 44.0.2 
 Google Chrome	49.0.2623.87 (Official Build) m (32-bit)
